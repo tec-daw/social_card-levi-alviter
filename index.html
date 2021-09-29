@@ -103,40 +103,83 @@
     <main id="main">
         <script type="text/babel">
 
-            const main = document.getElementById("main");
+            // const main = document.getElementById("main");
             
-             class Card extends React.Component {
-                render(){
-                    return(
+            //  class Card extends React.Component {
+
+            //     constructor(props){
+            //         super(props);
+            //         this.showMessage = this.showMessage.bind(this);
+            //     }
+
+            //     showMessage(){
+            //         console.log('Now you follow me');
+            //     }
+
+            //     render(){
+            //         return(
+            //             <section className="card">
+            //                 <div className="card__header">
+            //                     <div className="img__container">
+            //                         <img className="card__header-covimg" src={this.props.cURLcoverImg}/>
+            //                         <img className="card__header-profimg" src={this.props.cURLprofImg}/>
+            //                     </div>
+            //                 </div>
+            //                 <div className="card__body">
+            //                     <div className="card__bodyName">
+            //                         <h4>{this.props.cUserName}</h4>
+            //                         <h6>{this.props.cShortDesc}</h6>
+            //                     </div>
+            //                     <div className="card__body-statics">
+            //                         <div className="card__body-statistics-item">
+            //                             <h2>{this.props.cFollowersNumb}</h2> 
+            //                             <h5>Followers</h5>
+            //                         </div>
+            //                         <div className="card__body-statistics-item">
+            //                             <h2>{this.props.cFollowingNumb}</h2> 
+            //                             <h5>Following</h5>
+            //                         </div>
+            //                     </div>
+            //                     <div className="card__body-button" onClick={this.showMessage}>Follow +</div>
+            //                     <div className="card__body-text">{this.props.cLongDesc}
+            //                     </div>
+            //                 </div>
+            //             </section>
+            //         );
+            //     }
+            // }
+
+            function Card(props){
+                const [message, setMessage] = React.useState('¡Congratulations! Now you follow this artist');
+                return(
                         <section className="card">
                             <div className="card__header">
                                 <div className="img__container">
-                                    <img className="card__header-covimg" src={this.props.cURLcoverImg}/>
-                                    <img className="card__header-profimg" src={this.props.cURLprofImg}/>
+                                    <img className="card__header-covimg" src={props.cURLcoverImg}/>
+                                    <img className="card__header-profimg" src={props.cURLprofImg}/>
                                 </div>
                             </div>
                             <div className="card__body">
                                 <div className="card__bodyName">
-                                    <h4>{this.props.cUserName}</h4>
-                                    <h6>{this.props.cShortDesc}</h6>
+                                    <h4>{props.cUserName}</h4>
+                                    <h6>{props.cShortDesc}</h6>
                                 </div>
                                 <div className="card__body-statics">
                                     <div className="card__body-statistics-item">
-                                        <h2>{this.props.cFollowersNumb}</h2> 
+                                        <h2>{props.cFollowersNumb}</h2> 
                                         <h5>Followers</h5>
                                     </div>
                                     <div className="card__body-statistics-item">
-                                        <h2>{this.props.cFollowingNumb}</h2> 
+                                        <h2>{props.cFollowingNumb}</h2> 
                                         <h5>Following</h5>
                                     </div>
                                 </div>
-                                <div className="card__body-button">Follow +</div>
-                                <div className="card__body-text">{this.props.cLongDesc}
+                                <div className="card__body-button" onClick={ ()=>{setMessage(alert(message))}}>Follow +</div>
+                                <div className="card__body-text">{props.cLongDesc}
                                 </div>
                             </div>
                         </section>
                     );
-                }
             }
 
             ReactDOM.render(
@@ -225,14 +268,14 @@
                 render(){
                     return(
                         <div className="footer__container">
-                            <div class="footer__item">
+                            <div className="footer__item">
                                 <ul>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                 </ul>
                             </div>
-                            <div class="footer__item">
+                            <div className="footer__item">
                                 <ul>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                     <li className="list__item"><a href="#">Lorem</a></li>
@@ -241,7 +284,7 @@
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                 </ul>
                             </div>
-                            <div class="footer__item">
+                            <div className="footer__item">
                                 <ul>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                     <li className="list__item"><a href="#">Lorem</a></li>
@@ -249,7 +292,7 @@
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                 </ul>
                             </div>
-                            <div class="footer__item">
+                            <div className="footer__item">
                                 <ul>
                                     <li className="list__item"><a href="#">Lorem</a></li>
                                 </ul>
